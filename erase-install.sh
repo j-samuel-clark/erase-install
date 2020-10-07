@@ -37,9 +37,9 @@ jamfHelper="/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/
 
 if [[ -f "$jamfHelper" ]]; then
     # Jamf Helper localizations - download window
-    jh_dl_title_en="Downloading macOS"
-    jh_dl_desc_en="We need to download the macOS installer to your computer; this will take several minutes."
-    jh_dl_title_de="Download macOS"
+    jh_dl_title_en="Downloading macOS Installer"
+    jh_dl_desc_en="The macOS installer is being downloaded, please be be patient while this dialogue is present."
+    jh_dl_title_de="Downloading macOS Installer"
     jh_dl_desc_de="Der macOS Installer wird heruntergeladen, dies dauert mehrere Minuten."
     # Jamf Helper localizations - erase lockscreen
     jh_erase_title_en="Erasing macOS"
@@ -67,7 +67,7 @@ if [[ -f "$jamfHelper" ]]; then
     jh_check_desc_de="Die Installation von macOS ist auf einem Computer mit weniger als 15GB freien Festplattenspeicher nicht möglich."
 
     # Jamf Helper icon for download window
-    jh_dl_icon="/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/SidebarDownloadsFolder.icns"
+    jh_dl_icon="/System/Library/CoreServices/Software Update.app/Contents/Resources/SoftwareUpdate.icns"
 
     # Jamf Helper icon for confirmation dialog
     jh_confirmation_icon="/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns"
@@ -598,7 +598,7 @@ if [[ ! -d "$installmacOSApp" || $list ]]; then
     # the download is taking place.
     if [[ -f "$jamfHelper" && ($erase == "yes" || $reinstall == "yes") ]]; then
         echo "   [erase-install] Opening jamfHelper download message (language=$user_language)"
-        "$jamfHelper" -windowType hud -windowPosition ul -title "${!jh_dl_title}" -alignHeading center -alignDescription left -description "${!jh_dl_desc}" -lockHUD -icon  "$jh_dl_icon" -iconSize 100 &
+        "$jamfHelper" -windowType hud -windowPosition lr -title "${!jh_dl_title}" -alignHeading center -alignDescription left -description "${!jh_dl_desc}" -lockHUD -icon  "$jh_dl_icon" -iconSize 150 &
     fi
     # now run installinstallmacos or softwareupdate
     if [[ $ffi && $os_minor_version -ge 15 ]]; then
