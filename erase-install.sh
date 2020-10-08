@@ -38,7 +38,7 @@ jamfHelper="/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/
 if [[ -f "$jamfHelper" ]]; then
     # Jamf Helper localizations - download window
     jh_dl_title_en="Downloading macOS Installer"
-    jh_dl_desc_en="The macOS installer is being downloaded, please be be patient while this dialogue is present."
+    jh_dl_desc_en="The installer for macOS is being downloaded, please be be patient while you see this message."
     jh_dl_title_de="Downloading macOS Installer"
     jh_dl_desc_de="Der macOS Installer wird heruntergeladen, dies dauert mehrere Minuten."
     # Jamf Helper localizations - erase lockscreen
