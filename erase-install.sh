@@ -67,7 +67,7 @@ if [[ -f "$jamfHelper" ]]; then
     jh_check_desc_de="Die Installation von macOS ist auf einem Computer mit weniger als 15GB freien Festplattenspeicher nicht möglich."
 
     # Jamf Helper icon for download window
-    jh_dl_icon="/System/Library/CoreServices/Software Update.app/Contents/Resources/SoftwareUpdate.icns"
+    jh_dl_icon="/System/Library/PreferencePanes/SoftwareUpdate.prefPane/Contents/Resources/"
 
     # Jamf Helper icon for confirmation dialog
     jh_confirmation_icon="/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns"
